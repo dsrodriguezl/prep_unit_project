@@ -10,7 +10,9 @@ def convert_to_floats(rows):
     # a loop should be written \
     for row in rows:
       value = np.asarray(row)
-      value = value.astype(np.float)
+      ## np.float was producing an error because it is deprecated
+      ## I use float instead
+      value = value.astype(float)
 
       result.append(value)  # Vstack means we are adding a row
     return np.array(result)
